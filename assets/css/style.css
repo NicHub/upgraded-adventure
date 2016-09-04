@@ -1,0 +1,109 @@
+body
+{
+    font-size: 180%;
+    font-weight: 200;
+    text-align: justify;
+    color: rgb(51,51,51);
+}
+
+section h1, section h2, section h3
+{
+    text-align: center;
+}
+
+.jumbotron
+{
+    background: #fff;
+    text-align: left;
+}
+
+.jumbotron h1
+{
+    padding-left: 20px;
+    font-family: Niconne;
+}
+
+.jumbotron span
+{
+    font-size: 70%;
+    color: #0172ad;
+    float: right;
+    font-weight: 100;
+}
+
+.jumbocol
+{
+    background-image: url( '../../images/logo.png' );
+    background-repeat: no-repeat;
+    padding-left: 250px;
+    padding-top: 30px;
+}
+
+section div.container
+{
+    margin: 50px auto 60px;
+}
+
+footer
+{
+    background-color: #EEE;
+}
+
+nav.navbar
+{
+    font-size: 100%;
+}
+
+nav.navbar ul.navbar-nav li a
+{
+    color: inherit;
+}
+
+ul.nav
+{
+    float: none;
+    margin: 0 auto;
+    display: table;
+}
+
+blockquote
+{
+    font-style: italic;
+    text-align: left;
+}
+
+blockquote footer {
+    font-style: normal;
+    text-align: center;
+    padding: 0 10px;
+}
+
+
+footer.footer
+{
+    margin-top: 200px;
+}
+
+footer.footer div.container
+{
+    height: 60px;
+    padding-top: 20px;
+    font-size: 10pt;
+    text-transform: uppercase;
+}
+
+ul
+{
+    text-align: left;
+}
+
+button.btn-info
+{
+    background-color: #0172ad;
+    border: 1px solid #0172ad;
+}
+
+textarea
+{
+    resize: vertical;
+}
