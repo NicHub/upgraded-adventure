@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600");
 body
 {
-    font-size: 180%;
-    font-weight: 200;
+    font-family: "Source Sans Pro", monospace;
+    font-size: 200%;
+    font-weight: 300;
     text-align: justify;
     color: rgb(51,51,51);
 }
@@ -9,6 +11,7 @@ body
 section h1, section h2, section h3
 {
     text-align: center;
+    font-weight: 600;
 }
 
 .jumbotron
@@ -106,4 +109,9 @@ button.btn-info
 textarea
 {
     resize: vertical;
+}
+
+b
+{
+    font-weight: 400;
 }
