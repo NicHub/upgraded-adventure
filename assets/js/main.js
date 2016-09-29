@@ -19,52 +19,33 @@ $( document ).ready( function() {
   })();
 
 
-  //
+
+
+  // Navigation avec le clavier.
   ( function() {
     var menuLinks = $( "ul.nav li" );
-    var
-    $.each( menuLinks, function( index, value ){
-      console.log( $( this ).children( "a" ).attr( 'href' ) );
-      if( $( this ).hasClass( 'active' ) ){
-        console.log( "BINGO" );
-        return( false );
-      }
-    });
-  })();
+    var nbLinks = menuLinks.length;
+    var activeLinkIndex = $( "ul.nav li.active" ).first().index();
+    var nextLink = $( menuLinks[ activeLinkIndex < (nbLinks - 1) ? activeLinkIndex + 1 : 0           ] ).children( "a" ).attr( 'href' )
+    var prevLink = $( menuLinks[ activeLinkIndex > 0             ? activeLinkIndex - 1 : nbLinks - 1 ] ).children( "a" ).attr( 'href' )
 
-
-  // Navigation page suivante ou précédente avec les flèches
-  // gauche-droite du clavier (Mousetrap, https://craig.is/killing/mice)
-  // et le balayage gauche-droite de l’écran (jQuery Mobile, https://jquerymobile.com/).
-  // !! Il faut discriminer les écrans tactiles des souris.
-  // !! L’évènement “swipe” est activé lors d’un “pinch” si les dimensions de
-  // la page sont fixées dans la balise <meta> "viewport". Il faut donc laisser
-  // la possibilité de zoomer avec deux doigts.
-/*  ( function() {
-
-    var navigate_to_page = function( e, button_class ) {
-      var target_page = $( button_class ).first().attr( 'href' );
-      window.location.href = target_page;
-    }
-
-    Mousetrap.bind( 'left',       function( e ) { navigate_to_page( e, '.bouton-prec'    ); });
-    Mousetrap.bind( 'esc',        function( e ) { navigate_to_page( e, '.bouton-accueil' ); });
-    Mousetrap.bind( 'right',      function( e ) { navigate_to_page( e, '.bouton-suiv'    ); });
+    Mousetrap.bind( 'left',       function( e ) { navigate_to_page( e, prevLink                 ); });
+    Mousetrap.bind( 'esc',        function( e ) { navigate_to_page( e, $( "ul.nav li" ).first() ); });
+    Mousetrap.bind( 'right',      function( e ) { navigate_to_page( e, nextLink                 ); });
 
     $( 'body' ).on( 'mousedown',  function( e ) { disable_swipe( e ); });
     $( 'body' ).on( 'touchstart', function( e ) { enable_swipe( e );  });
 
+    var navigate_to_page = function( e, targetHref ) {
+      window.location.href = targetHref;
+    }
     function disable_swipe( e ) {
       $( 'body' ).off( 'swiperight swipeleft' );
     }
     function enable_swipe( e ) {
-      $( 'body' ).on( 'swiperight', function( e ) { navigate_to_page( e, '.bouton-prec' ); });
-      $( 'body' ).on( 'swipeleft',  function( e ) { navigate_to_page( e, '.bouton-suiv' ); });
+      $( 'body' ).on( 'swiperight', function( e ) { navigate_to_page( e, prevLink ); });
+      $( 'body' ).on( 'swipeleft',  function( e ) { navigate_to_page( e, nextLink ); });
     }
   })();
-*/
-
-
-
 
 });
