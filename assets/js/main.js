@@ -26,12 +26,13 @@ $( document ).ready( function() {
     var menuLinks = $( "ul.nav li" );
     var nbLinks = menuLinks.length;
     var activeLinkIndex = $( "ul.nav li.active" ).first().index();
-    var nextLink = $( menuLinks[ activeLinkIndex < (nbLinks - 1) ? activeLinkIndex + 1 : 0           ] ).children( "a" ).attr( 'href' )
-    var prevLink = $( menuLinks[ activeLinkIndex > 0             ? activeLinkIndex - 1 : nbLinks - 1 ] ).children( "a" ).attr( 'href' )
+    var nextLink = $( menuLinks[ activeLinkIndex < (nbLinks - 1) ? activeLinkIndex + 1 : 0           ] ).children( "a" ).attr( 'href' );
+    var prevLink = $( menuLinks[ activeLinkIndex > 0             ? activeLinkIndex - 1 : nbLinks - 1 ] ).children( "a" ).attr( 'href' );
+    var firstLink = $( "ul.nav li" ).first().children( "a" ).attr( 'href' );
 
-    Mousetrap.bind( 'left',       function( e ) { navigate_to_page( e, prevLink                 ); });
-    Mousetrap.bind( 'esc',        function( e ) { navigate_to_page( e, $( "ul.nav li" ).first() ); });
-    Mousetrap.bind( 'right',      function( e ) { navigate_to_page( e, nextLink                 ); });
+    Mousetrap.bind( 'left',       function( e ) { navigate_to_page( e, prevLink  ); });
+    Mousetrap.bind( 'esc',        function( e ) { navigate_to_page( e, firstLink ); });
+    Mousetrap.bind( 'right',      function( e ) { navigate_to_page( e, nextLink  ); });
 
     $( 'body' ).on( 'mousedown',  function( e ) { disable_swipe( e ); });
     $( 'body' ).on( 'touchstart', function( e ) { enable_swipe( e );  });
